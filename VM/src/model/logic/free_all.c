@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/08 23:47:16 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/09 00:01:22 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 00:30:40 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ static void	free_player(t_player *player)
 
 static void	free_processors(t_processor *proc)
 {
-	if (proc->next)
+	if (proc && proc->next)
 		free_processors(proc->next);
-	free(proc);
+	if (proc)
+		free(proc);
 }
 
 void		vm_free_all(t_param *param)
