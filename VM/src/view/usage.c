@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 22:17:23 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/07 20:25:10 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 18:29:08 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void				print_error_players()
 {
-	ft_putstr("Too many champions\n");
+	ft_putstr_fd("Too many champions\n", 2);
 	exit(1);
 }
 
