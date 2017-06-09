@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/17 11:47:44 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/09 19:00:07 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 19:36:08 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,14 +90,14 @@ int				main(int argc, char **argv)
 {
 	t_fl	*flags;
 
-	flags = malloc(sizeof(t_fl));
-	vm_get_flags(flags, argv);
-	check_flags_players(argc - 1, flags, argv);
 	if (argc == 1)
 	{
 		vm_print_usage();
 		return (0);
 	}
+	flags = malloc(sizeof(t_fl));
+	vm_get_flags(flags, argv);
+	check_flags_players(argc - 1, flags, argv);
 	logic(get_player(argc, argv), flags);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 22:17:23 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/09 18:48:01 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 19:38:44 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void				vm_print_usage(void)
 			"                the next available number will be given to \n"
 			"                Player, starting from 1 \n"
 			"    -v        : Visualisation option\n");
+	exit(1);
 }
 
 /*
