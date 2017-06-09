@@ -6,15 +6,15 @@
 #    By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/29 11:45:35 by oklymeno          #+#    #+#              #
-#    Updated: 2017/06/09 00:36:48 by oklymeno         ###   ########.fr        #
+#    Updated: 2017/06/09 15:07:33 by oborysen         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME1=asm
-NAME2=corewar
-NAME3=decompiler
-LIBFT=libft/libft.a
-SRC1=asm_main.c \
+NAME1 = asm
+NAME2 = corewar
+NAME3 = decompiler
+LIBFT = libft/libft.a
+SRC1 = asm_main.c \
 	 asm_push_data.c \
 	 asm_op.c \
 	 asm_write_instr.c \
@@ -31,7 +31,7 @@ SRC1=asm_main.c \
 	 asm_validation.c \
 	 asm_main_val.c \
 	 asm_split.c
-SRC2=VM/src/controller/main.c\
+SRC2 = VM/src/controller/main.c\
 	 VM/src/controller/vm_validation.c\
 	 VM/src/controller/vm_flags.c\
 	 VM/src/view/usage.c\
@@ -68,7 +68,7 @@ SRC2=VM/src/controller/main.c\
 	 VM/src/model/handle_check.c\
 	 VM/src/model/steps.c\
 	 VM/src/model/dir_ind.c
-SRC3=algorythm.c \
+SRC3 = algorythm.c \
 	 decomp_main.c \
 	 write_oper_1_5.c \
 	 write_oper_6_10.c \
