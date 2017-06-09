@@ -34,6 +34,21 @@ int		check_arg(t_valid_asm *file_s, t_param *param, int opcode)
 	return (0);
 }
 
+int		handle_dir_char(char *src)
+{
+	if (*src == '-' || ft_isdigit(*src))
+		src++;
+	else
+		return (0);
+	while (*src && *src != SEPARATOR_CHAR)
+	{
+		if (!ft_isdigit(*src))
+			return (0);
+		src++;
+	}
+	return (1);
+}
+
 void	check_t_dir(t_valid_asm *file_s, t_param *param, int opcode, int fin)
 {
 	int	num;
@@ -53,6 +68,8 @@ void	check_t_dir(t_valid_asm *file_s, t_param *param, int opcode, int fin)
 	}
 	if (file_s->stream[file_s->num_str][file_s->arg] == ' '
 		|| file_s->stream[file_s->num_str][file_s->arg] == '\t')
+		error_exit("Syntax error (format T_DIR, not integer)");
+	if (!handle_dir_char(&file_s->stream[file_s->num_str][file_s->arg]))
 		error_exit("Syntax error (format T_DIR, not integer)");
 	num = ft_atoi(&file_s->stream[file_s->num_str][file_s->arg]);
 	push_argument(param->oper_lst, DIR_CODE, NULL, num);

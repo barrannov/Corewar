@@ -6,7 +6,7 @@
 /*   By: oborysen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/18 18:26:40 by oborysen          #+#    #+#             */
-/*   Updated: 2017/06/03 18:29:40 by dkhlopov         ###   ########.fr       */
+/*   Updated: 2017/06/09 19:14:17 by dkhlopov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,16 @@ t_param		*validation(char *name)
 	param->lable_lst = NULL;
 	null_valid_asm(file_s);
 	fd = open(name, O_RDONLY);
+	if (fd == -1)
+		error_exit("Error: File doesn't exist");
 	read_file_asm(file_s, fd, line);
 	del_comments(file_s);
 	chek_format(file_s, param);
 	free_mas(file_s->stream);
 	ft_strdel(&file_s->str_line);
 	free(file_s);
+	if (file_s->num_com_name != 2)
+		error_exit("Error: name or comment tag incorrect");
 	return (param);
 }
 
