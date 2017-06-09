@@ -15,7 +15,7 @@
 static int		not_flag(char **argv, int n)
 {
 	if (!ft_strcmp(argv[n], "-d") || !ft_strcmp(argv[n], "-n") ||
-		!ft_strcmp(argv[n], "-v") || !ft_strcmp(argv[n], "-p"))
+		!ft_strcmp(argv[n], "-v"))
 		return (0);
 	else if (digit(argv[n]) && (!ft_strcmp(argv[n - 1], "-d") ||
 								!ft_strcmp(argv[n - 1], "-n")))
