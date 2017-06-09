@@ -24,13 +24,15 @@ void	check_t_ind(t_valid_asm *file_s, t_param *param, int opcode, int fin)
 		error_exit("Syntax error (format T_IND)");
 	if (file_s->stream[file_s->num_str][file_s->arg] == ' '
 		|| file_s->stream[file_s->num_str][file_s->arg] == '\t')
-		error_exit("Syntax error (format T_DIR, not integer)");
+		error_exit("Syntax error (format T_IND, not integer)");
 	if (file_s->stream[file_s->num_str][file_s->arg] == LABEL_CHAR)
 	{
 		file_s->type = IND_CODE;
 		handle_lable(file_s, param, opcode, fin);
 		return ;
 	}
+	if (!handle_dir_char(&file_s->stream[file_s->num_str][file_s->arg]))
+		error_exit("Syntax error (format T_IND, not integer)");
 	num = ft_atoi(&file_s->stream[file_s->num_str][file_s->arg]);
 	push_argument(param->oper_lst, IND_CODE, NULL, num);
 	if ((opcode == 3 || opcode == 11) && fin)
