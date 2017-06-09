@@ -62,6 +62,7 @@ int				make_translation(char *name, t_param **par_lst)
 	int				fd;
 	char			*file_name;
 
+	par = validation(name);
 	if (is_valid_name(name))
 	{
 		file_name = get_file_name(name);
@@ -73,8 +74,7 @@ int				make_translation(char *name, t_param **par_lst)
 		return (0);
 	}
 	if (fd == -1)
-		return (0);
-	par = validation(name);
+		error_exit("Error: File .cor cannot be created");
 	set_arg_type_bytes(par);
 	par->prog_size = set_oper_start_addr(par);
 	set_label_value(par);

@@ -6,7 +6,7 @@
 /*   By: oborysen <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/18 16:25:43 by oborysen          #+#    #+#             */
-/*   Updated: 2017/06/03 18:51:56 by dkhlopov         ###   ########.fr       */
+/*   Updated: 2017/06/09 19:17:01 by dkhlopov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,12 @@ void	gv_function2(t_valid_asm *file_s)
 
 int		read_file_asm(t_valid_asm *file_s, int fd, char *line)
 {
-	while (get_next_line(fd, &line))
+	int		value;
+
+	while ((value = get_next_line(fd, &line)))
 	{
+		if (value == -1)
+			error_exit("Error: something went wrong");
 		file_s->ff = file_s->str_line;
 		if (file_s->str_line == NULL)
 			file_s->str_line = ft_strdup(line);
@@ -40,8 +44,7 @@ int		read_file_asm(t_valid_asm *file_s, int fd, char *line)
 		file_s->stream = ft_strsplit(file_s->str_line, 10);
 		ft_strdel(&line);
 	}
-	if (file_s->stream == NULL)
-		error_exit("File is empty");
+	(file_s->stream == NULL) ? error_exit("File is empty") : 0;
 	check_new_line_at_end(fd);
 	return (1);
 }
