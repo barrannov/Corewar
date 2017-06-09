@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/28 17:41:23 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/08 20:38:30 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 19:19:19 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ static void			write_value(t_param *params, t_processor *proc,
 	params->map[adr + 1] = (proc->reg[r] << 8) >> 24;
 	params->map[adr + 2] = (proc->reg[r] << 16) >> 24;
 	params->map[adr + 3] = (proc->reg[r] << 24) >> 24;
-	params->map_c[adr] = 256 - proc->player;
-	params->map_c[adr + 1] = 256 - proc->player;
-	params->map_c[adr + 2] = 256 - proc->player;
-	params->map_c[adr + 3] = 256 - proc->player;
+	params->map_c[adr] = proc->player;
+	params->map_c[adr + 1] = proc->player;
+	params->map_c[adr + 2] = proc->player;
+	params->map_c[adr + 3] = proc->player;
 }
 
 static int			arg_1(t_param *params, t_processor *proc, t_val *val)

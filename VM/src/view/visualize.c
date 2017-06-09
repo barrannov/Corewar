@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/02 12:13:10 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/07 20:13:39 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 19:24:31 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ static void	init_colors(t_player *players)
 
 	color = 1;
 	tmp = players;
-	init_pair(255, 7, 0);
+	init_pair(0, 7, 0);
 	while (tmp)
 	{
-		init_pair(-tmp->numb, color, COLOR_BLACK);
-		init_pair(255 + tmp->numb, 7, color);
+		init_pair(tmp->vis_numb, color, COLOR_BLACK);
+		init_pair(255 - tmp->vis_numb, 7, color);
 		color++;
 		refresh();
 		tmp = tmp->next;
@@ -67,9 +67,9 @@ static void	print_map_vis(WINDOW *wnd, t_param *param)
 			print_pc(wnd, param, i, check_proc(param, i));
 		else if (param->map_c[i] != 0)
 		{
-			wattron(wnd, COLOR_PAIR(256 - param->map_c[i]));
+			wattron(wnd, COLOR_PAIR(param->map_c[i]));
 			wprintw(wnd, "%.2x ", param->map[i]);
-			wattroff(wnd, COLOR_PAIR(256 - param->map_c[i]));
+			wattroff(wnd, COLOR_PAIR(param->map_c[i]));
 		}
 		else
 			wprintw(wnd, "%.2x ", param->map[i]);

@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/17 11:47:44 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/09 18:50:09 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 19:00:07 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,11 @@ void			check_amount_n(char **argv, int argc)
 	i = 1;
 	while (i <= argc)
 	{
-		if (!ft_strcmp(argv[i], "-n"))
+		if (!ft_strcmp(argv[i], "-n") && !ft_strcmp(argv[i - 1], "-n"))
 			n++;
 		i++;
 	}
-	if (n > 1)
+	if (n > 0)
 		print_cant_read_source_file("");
 }
 
