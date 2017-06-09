@@ -6,7 +6,7 @@
 /*   By: abaranov <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/06 22:53:51 by abaranov          #+#    #+#             */
-/*   Updated: 2017/06/08 20:12:14 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 14:49:26 by abaranov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void				print_winner(int numb, char *name)
 	ft_putnbr(numb);
 	ft_putstr(" (");
 	ft_putstr(name);
-	ft_putstr(") won");
+	ft_putstr(") won\n");
 }
 
 void				output_the_winner(t_player *players)
@@ -53,6 +53,7 @@ void				output_the_winner(t_player *players)
 	if (amount_lst_el_players(players) == 1)
 		print_winner(temp_player->numb, temp_player->header->prog_name);
 	else
+	{
 		while (temp_player)
 		{
 			if (temp_player->live == 1)
@@ -62,5 +63,6 @@ void				output_the_winner(t_player *players)
 			}
 			temp_player = temp_player->next;
 		}
-	print_winner(players->numb, players->header->prog_name);
+		print_winner(players->numb, players->header->prog_name);
+	}
 }
