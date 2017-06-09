@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 22:17:51 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/09 18:54:44 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 19:38:07 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,8 @@ void				logic(t_player *players, t_fl *flags)
 {
 	t_param *param;
 
+	if (!players)
+		vm_print_usage();
 	param = malloc(sizeof(t_param));
 	param->processors = NULL;
 	param->amount_champs = count_champs(players);

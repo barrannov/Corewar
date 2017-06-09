@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 18:37:58 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/08 23:52:24 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 19:09:54 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct			s_player
 	int					live_amount;
 	int					pos;
 	int					numb;
+	int					vis_numb;
 	unsigned char		*commands;
 	struct s_player		*next;
 }						t_player;

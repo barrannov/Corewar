@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 17:29:15 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/09 19:25:54 by dkhlopov         ###   ########.fr       */
+/*   Updated: 2017/06/09 19:31:20 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void		add_to_map(t_player *players, t_param *params, int pc)
 	while (i < (int)players->header->prog_size)
 	{
 		params->map[pc] = players->commands[i];
-		params->map_c[pc] = (unsigned char)players->numb;
+		params->map_c[pc] = (unsigned char)players->vis_numb;
 		pc++;
 		i++;
 	}
