@@ -6,11 +6,17 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 22:17:23 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/07 20:25:10 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 18:48:01 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/vm_header.h"
+
+void				print_error_players(void)
+{
+	ft_putstr_fd("Too many champions\n", 2);
+	exit(1);
+}
 
 void				print_size_error(char *name)
 {

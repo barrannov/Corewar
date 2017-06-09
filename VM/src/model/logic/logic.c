@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/19 22:17:51 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/09 00:10:51 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 18:54:44 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,9 @@ void				logic(t_player *players, t_fl *flags)
 	param = malloc(sizeof(t_param));
 	param->processors = NULL;
 	param->amount_champs = count_champs(players);
-	param->amount_proc = 1;
 	create_map(players, param);
 	get_processes(param);
+	param->amount_proc = amount_lst_el(param->processors);
 	param->amount_champs = 0;
 	flags->vis == 1 ? (param->print_live = 0) :
 		(param->print_live = 1);

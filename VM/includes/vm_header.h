@@ -140,4 +140,5 @@ void					visualize(t_param *param);
 void					print_status(t_param *param, WINDOW *status);
 void					print_size_error(char *name);
 void					key_hook(int flag);
+void					print_error_players();
 #endif

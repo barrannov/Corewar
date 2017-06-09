@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/22 16:32:31 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/08 22:07:18 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 18:42:54 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,34 @@ static t_player	*get_player(t_header *header, int fd, int numb)
 	return (player);
 }
 
+static void		check_file(char *file)
+{
+	char	**res;
+	int		i;
+
+	i = 0;
+	res = ft_strsplit(file, '.');
+	while (res[i])
+		i++;
+	if (ft_strcmp(res[i - 1], "cor"))
+	{
+		while (--i >= 0)
+			free(res[i]);
+		free(res);
+		print_error_file(file);
+	}
+	while (--i >= 0)
+		free(res[i]);
+	free(res);
+}
+
 t_player		*read_file_vm(char *file, int numb)
 {
 	int			fd;
 	char		*res;
 	t_header	*header;
 
+	check_file(file);
 	res = malloc(sizeof(char *) * sizeof(t_header));
 	fd = open(file, O_RDONLY);
 	read(fd, res, sizeof(t_header));

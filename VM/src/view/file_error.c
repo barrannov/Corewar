@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   view.h                                             :+:      :+:    :+:   */
+/*   file_error.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/05/19 22:21:49 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/09 18:30:43 by oklymeno         ###   ########.fr       */
+/*   Created: 2017/06/09 18:28:12 by oklymeno          #+#    #+#             */
+/*   Updated: 2017/06/09 18:43:16 by oklymeno         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VIRTUAL_MACHINE_VIEW_H
-# define VIRTUAL_MACHINE_VIEW_H
+#include "../../includes/view.h"
 
-# define MAX_UINT = 4294967295
-
-# include "vm_header.h"
-
-void	print_cant_read_source_file(char *name);
-void	vm_print_usage(void);
-void	dump_error(void);
-void	say_live(char *name);
-void	print_map(unsigned char *map);
-void	print_error_file(char *file);
-char	*ft_itoa_base(int value, int base);
-
-#endif
+void	print_error_file(char *file)
+{
+	ft_putstr_fd("Can't read source file: ", 2);
+	ft_putstr_fd(file, 2);
+	ft_putstr_fd("\n", 2);
+	exit(1);
+}

@@ -6,7 +6,7 @@
 #    By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/29 11:45:35 by oklymeno          #+#    #+#              #
-#    Updated: 2017/06/09 17:03:04 by dkhlopov         ###   ########.fr        #
+#    Updated: 2017/06/09 19:24:20 by dkhlopov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,6 +40,7 @@ SRC2 = VM/src/controller/main.c\
 	 VM/src/view/print_map.c\
 	 VM/src/view/key_hook.c\
 	 VM/src/view/say_live.c\
+	 VM/src/view/file_error.c\
 	 VM/src/view/ft_itoa_base.c\
 	 VM/src/model/create_map.c\
 	 VM/src/model/logic/logic.c\

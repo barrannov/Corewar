@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 17:29:15 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/09 17:04:23 by dkhlopov         ###   ########.fr       */
+/*   Updated: 2017/06/09 19:25:54 by dkhlopov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,18 @@
 
 static void	check_players(t_player *players)
 {
-	int		res;
+	int			res;
 	t_player	*tmp;
 
 	res = 0;
+	tmp = players;
 	while (tmp)
 	{
 		res++;
 		tmp = tmp->next;
 	}
-//	if (res > MAX_PLAYERS)
-//		print_error_players();
+	if (res > MAX_PLAYERS)
+		print_error_players();
 }
 
 void		add_to_map(t_player *players, t_param *params, int pc)
@@ -32,7 +33,6 @@ void		add_to_map(t_player *players, t_param *params, int pc)
 	int i;
 
 	i = 0;
-	
 	while (i < (int)players->header->prog_size)
 	{
 		params->map[pc] = players->commands[i];
@@ -48,7 +48,7 @@ void		create_map(t_player *players, t_param *param)
 	int			pc;
 
 	pc = 0;
-	check_players(players);	
+	check_players(players);
 	temp_players = players;
 	param->players = players;
 	param->map = (unsigned char *)ft_strnew(MEM_SIZE);
