@@ -6,7 +6,7 @@
 /*   By: oklymeno <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/05/25 17:29:15 by oklymeno          #+#    #+#             */
-/*   Updated: 2017/06/03 15:09:59 by oklymeno         ###   ########.fr       */
+/*   Updated: 2017/06/09 17:04:23 by dkhlopov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static void	check_players(t_player *players)
 		res++;
 		tmp = tmp->next;
 	}
-	if (res > MAX_PLAYERS)
-		print_error_players();
+//	if (res > MAX_PLAYERS)
+//		print_error_players();
 }
 
 void		add_to_map(t_player *players, t_param *params, int pc)
