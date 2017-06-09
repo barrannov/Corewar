@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "asm_header.h"
+#include "../includes/asm_header.h"
 
 int		check_arg(t_valid_asm *file_s, t_param *param, int opcode)
 {
@@ -40,7 +40,7 @@ int		handle_dir_char(char *src)
 		src++;
 	else
 		return (0);
-	while (*src && *src != SEPARATOR_CHAR)
+	while (*src && (*src != SEPARATOR_CHAR && *src != '\t' && *src != ' '))
 	{
 		if (!ft_isdigit(*src))
 			return (0);
