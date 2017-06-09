@@ -18,6 +18,7 @@ static void	check_players(t_player *players)
 	t_player	*tmp;
 
 	res = 0;
+	tmp = players;
 	while (tmp)
 	{
 		res++;
