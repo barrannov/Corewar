@@ -12,6 +12,12 @@
 
 #include "../../includes/vm_header.h"
 
+void				print_error_players()
+{
+	ft_putstr("Too many champions\n");
+	exit(1);
+}
+
 void				print_size_error(char *name)
 {
 	ft_putstr_fd("Player ", 2);
