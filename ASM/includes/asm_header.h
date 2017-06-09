@@ -163,5 +163,6 @@ void				handle_lable(t_valid_asm *file_s, t_param *param,\
 									int opcode, int fin);
 int					ft_isdigit_minus(int c);
 void				check_new_line_at_end(int fd);
+int					handle_dir_char(char *src);
 
 #endif
